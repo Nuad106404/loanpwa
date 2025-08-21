@@ -1,0 +1,236 @@
+/* Formal typography for loan agreement documents */
+
+/* Import formal serif fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap');
+
+/* Apply formal styling to the agreement page */
+.agreement-page {
+  --serif-font: 'Libre Baskerville', 'Times New Roman', Georgia, serif;
+  --alt-serif-font: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+  --thai-font: 'Noto Sans Thai', 'Sarabun', system-ui, sans-serif;
+  --thai-heading-font: 'Prompt', 'Sarabun', system-ui, sans-serif;
+  
+  /* Government-style document defaults */
+  --gov-primary: #1a4e8e;
+  --gov-secondary: #b30000;
+  --gov-accent: #d4a017;
+  --gov-border: #ccd1d9;
+  --gov-paper: #fcfaf8;
+  --gov-seal-color: rgba(178, 34, 34, 0.85);
+}
+
+/* Government document styles */
+.government-document {
+  background-color: var(--gov-paper);
+  border: 1px solid var(--gov-border);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+/* Official header styling */
+.government-header {
+  background: linear-gradient(to right, #fff, #f5f5f5);
+  border-bottom: 2px solid var(--gov-primary);
+  position: relative;
+}
+
+/* Official emblem */
+.government-emblem {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* Official seal styling */
+.official-seal {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  opacity: 0.7;
+  z-index: 10;
+}
+
+.official-seal.top-right {
+  top: 1rem;
+  right: 1rem;
+  transform: rotate(15deg);
+}
+
+.official-seal.bottom-left {
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(-5deg);
+  opacity: 0.15;
+  width: 150px;
+  height: 150px;
+}
+
+/* Section styling for government document */
+.government-section {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.government-section-title {
+  color: var(--gov-primary);
+  font-weight: 600;
+  border-bottom: 1px solid var(--gov-border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-family: var(--thai-heading-font);
+}
+
+/* English text styling with formal fonts */
+.english-text {
+  font-family: var(--serif-font);
+  line-height: 1.6;
+}
+
+/* Numbers styling */
+.formal-numbers {
+  font-family: var(--alt-serif-font);
+  font-feature-settings: "tnum" on, "lnum" on;
+  font-weight: 500;
+}
+
+/* Document title styling */
+.document-title {
+  font-family: var(--alt-serif-font);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+/* Headings */
+.section-heading {
+  font-family: var(--serif-font);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Formal signature styling */
+.signature-block {
+  font-family: var(--serif-font);
+  font-style: italic;
+}
+
+/* Mobile-specific styles for government document */
+@media (max-width: 768px) {
+  .government-document {
+    padding: 0.75rem !important;
+    margin: 0 !important;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  
+  .government-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem 0.5rem !important;
+  }
+  
+  .official-seal.top-right {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 60px;
+    height: 60px;
+  }
+  
+  .government-section {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .mobile-stack {
+    flex-direction: column !important;
+  }
+  
+  .mobile-full-width {
+    width: 100% !important;
+    margin-bottom: 0.75rem;
+  }
+  
+  .mobile-text-center {
+    text-align: center !important;
+  }
+  
+  .mobile-text-sm {
+    font-size: 0.875rem !important;
+  }
+  
+  .mobile-heading-lg {
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .mobile-hidden {
+    display: none !important;
+  }
+  
+  .mobile-stack-signatures {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .mobile-stack-signatures > div {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Tablet-specific adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .government-document {
+    padding: 1.5rem;
+  }
+  
+  .official-seal.top-right {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Print-specific styles */
+@media print {
+  body {
+    font-family: var(--serif-font), var(--thai-font);
+    background-color: white !important;
+  }
+  
+  .english-text, .formal-numbers, .document-title, .section-heading {
+    color: #000 !important;
+  }
+  
+  .agreement-content {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .government-document {
+    box-shadow: none !important;
+    border: 1px solid #000 !important;
+    padding: 1cm !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-visible {
+    display: block !important;
+  }
+  
+  /* Force page breaks where appropriate */
+  .print-page-break {
+    page-break-after: always;
+  }
+}

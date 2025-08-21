@@ -1,0 +1,23 @@
+{
+  "name": "loan-management-system",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "admin"
+  ],
+  "scripts": {
+    "dev:client": "cd client && npm run dev",
+    "dev:admin": "cd admin && npm run dev",
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:admin\"",
+    "build:client": "cd client && npm run build",
+    "build:admin": "cd admin && npm run build",
+    "build": "npm run build:client && npm run build:admin"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}

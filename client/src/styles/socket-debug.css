@@ -1,0 +1,234 @@
+/* Socket Debugging Alert Styles */
+.socket-debug-alert {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  border-radius: 12px !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3) !important;
+  border: 3px solid #ff6b6b !important;
+  animation: socketDebugPulse 2s infinite !important;
+}
+
+.socket-debug-alert .swal2-title {
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+  color: #333 !important;
+  margin-bottom: 1rem !important;
+}
+
+.socket-debug-alert .swal2-html-container {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  color: #555 !important;
+}
+
+.socket-debug-alert .swal2-html-container strong {
+  color: #333 !important;
+  font-weight: 600 !important;
+}
+
+.socket-debug-alert .swal2-confirm {
+  background-color: #ff6b6b !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 10px 20px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+.socket-debug-alert .swal2-confirm:hover {
+  background-color: #ff5252 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4) !important;
+}
+
+/* Connection Lost Alert - Warning Style */
+.socket-debug-alert[data-type="warning"] {
+  border-color: #ffc107 !important;
+}
+
+.socket-debug-alert[data-type="warning"] .swal2-icon.swal2-warning {
+  border-color: #ffc107 !important;
+  color: #ffc107 !important;
+}
+
+/* Connection Error Alert - Error Style */
+.socket-debug-alert[data-type="error"] {
+  border-color: #dc3545 !important;
+}
+
+.socket-debug-alert[data-type="error"] .swal2-icon.swal2-error {
+  border-color: #dc3545 !important;
+  color: #dc3545 !important;
+}
+
+/* Reconnection Success Alert - Success Style */
+.socket-debug-alert[data-type="success"] {
+  border-color: #28a745 !important;
+  animation: socketDebugSuccess 1s ease-out !important;
+}
+
+.socket-debug-alert[data-type="success"] .swal2-icon.swal2-success {
+  border-color: #28a745 !important;
+  color: #28a745 !important;
+}
+
+/* Connection Success Alert - Special Style */
+.socket-connection-success {
+  border-color: #28a745 !important;
+  background: linear-gradient(135deg, #f8fff9 0%, #e8f5e8 100%) !important;
+}
+
+.socket-connection-success .swal2-title {
+  color: #155724 !important;
+  text-shadow: 0 1px 2px rgba(21, 87, 36, 0.1) !important;
+}
+
+.socket-connection-success code {
+  background: #d4edda !important;
+  color: #155724 !important;
+  border: 1px solid #c3e6cb !important;
+  font-weight: 600 !important;
+}
+
+/* Page Refresh Alert - Special Style */
+.page-refresh-alert {
+  border-color: #ffc107 !important;
+  background: linear-gradient(135deg, #fffbf0 0%, #fff3cd 100%) !important;
+  animation: pageRefreshPulse 2s infinite !important;
+}
+
+.page-refresh-alert .swal2-title {
+  color: #856404 !important;
+  text-shadow: 0 1px 2px rgba(133, 100, 4, 0.1) !important;
+}
+
+.page-refresh-alert .swal2-icon.swal2-success {
+  border-color: #ffc107 !important;
+  color: #ffc107 !important;
+}
+
+.page-refresh-alert code {
+  background: #fff3cd !important;
+  color: #856404 !important;
+  border: 1px solid #ffeaa7 !important;
+  font-weight: 600 !important;
+}
+
+/* Animations */
+@keyframes socketDebugPulse {
+  0% {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
+  }
+  100% {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@keyframes socketDebugSuccess {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pageRefreshSuccess {
+  0% {
+    transform: scale(0.9) rotate(-2deg);
+    opacity: 0;
+  }
+  25% {
+    transform: scale(1.1) rotate(1deg);
+  }
+  50% {
+    transform: scale(0.95) rotate(-0.5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes pageRefreshPulse {
+  0% {
+    box-shadow: 0 15px 35px rgba(255, 193, 7, 0.3);
+    border-color: #ffc107;
+  }
+  50% {
+    box-shadow: 0 15px 35px rgba(255, 193, 7, 0.6);
+    border-color: #ffca2c;
+  }
+  100% {
+    box-shadow: 0 15px 35px rgba(255, 193, 7, 0.3);
+    border-color: #ffc107;
+  }
+}
+
+/* Status indicator styles */
+#reconnect-status {
+  padding: 8px 12px !important;
+  border-radius: 6px !important;
+  background-color: rgba(255, 107, 107, 0.1) !important;
+  border-left: 4px solid #ff6b6b !important;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+  font-size: 0.9rem !important;
+  animation: statusBlink 1.5s infinite !important;
+}
+
+@keyframes statusBlink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0.7;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .socket-debug-alert {
+    margin: 10px !important;
+    width: calc(100% - 20px) !important;
+  }
+  
+  .socket-debug-alert .swal2-title {
+    font-size: 1.3rem !important;
+  }
+  
+  .socket-debug-alert .swal2-html-container {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .socket-debug-alert {
+    background-color: #2d3748 !important;
+    color: #e2e8f0 !important;
+  }
+  
+  .socket-debug-alert .swal2-title {
+    color: #f7fafc !important;
+  }
+  
+  .socket-debug-alert .swal2-html-container {
+    color: #cbd5e0 !important;
+  }
+  
+  .socket-debug-alert .swal2-html-container strong {
+    color: #f7fafc !important;
+  }
+  
+  #reconnect-status {
+    background-color: rgba(255, 107, 107, 0.2) !important;
+    color: #fed7d7 !important;
+  }
+}
