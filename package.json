@@ -7,9 +7,9 @@
     "admin"
   ],
   "scripts": {
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:admin\"",
     "dev:client": "cd client && npm run dev",
     "dev:admin": "cd admin && npm run dev",
-    "dev": "concurrently \"npm run dev:client\" \"npm run dev:admin\"",
     "build:client": "cd client && npm run build",
     "build:admin": "cd admin && npm run build",
     "build": "npm run build:client && npm run build:admin"
